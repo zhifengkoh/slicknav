@@ -16,17 +16,17 @@ Alternatively, you can download it:
 
 ### 2. Add
 
-#### Step 1: Add stylesheets
+**Step 1: Add stylesheets**
 
 ![Stylesheets](https://dl.dropbox.com/u/2686230/stylesheets.png)
 
-#### Step 2: Remove Bourbon, import Compass, import SlickNav
+**Step 2: Remove Bourbon, import Compass, import SlickNav**
 
     //@import "bourbon/_bourbon";  //Bourbon conflicts with Compass
     @import "compass/css3";
     @import "slicknav/_slicknav";
 
-#### Step 3: Add Compass to `config.json`
+**Step 3: Add Compass to `config.json`**
 
     {
     	"host_map": [
@@ -37,7 +37,7 @@ Alternatively, you can download it:
     	"compass" : true
     }
 
-#### Step 4: Add functions to `functions/main.ts`
+**Step 4: Add functions to `functions/main.ts`**
 
     ####################
     ### SlickNav 
