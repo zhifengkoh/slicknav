@@ -20,6 +20,14 @@
   }
 }
 
+@func XMLNode.ur_slicknav_item(Text %href, Text %img_url) {
+  insert("li") {
+    insert("a", href: %href) {
+      insert("img", src: asset("images/" + %img_url))
+    }
+  }
+}
+
 ####################
 ### Site Functions
 ####################

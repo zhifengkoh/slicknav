@@ -1,3 +1,5 @@
-footer._footer {
-
+footer.mw_footer {
+  #mw_nav_home {
+    @include background-image("/assets/images/home.png");
+  }
 }
