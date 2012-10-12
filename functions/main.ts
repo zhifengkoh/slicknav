@@ -2,6 +2,18 @@
 ### SlickNav 
 ####################
 
+# Example Usage:
+# ##############
+#
+# ur_slicknav() {          
+#   ur_slicknav_item($profile_path, "profile.png")            # Add a nav item and specify its image
+#   ur_slicknav_item($home_path, "home.png", "mw_nav_home")   # Add a nav item with an id
+# }
+
+
+# Inserts the HTML required for a SlickNav
+# Notice the use of the yield():
+# You are expected to insert the navigation menu list and list items
 @func XMLNode.ur_slicknav() {
   insert("div", class: "ur_slicknav") {
     # Insert the input
@@ -15,11 +27,13 @@
         }
       }
     }
-
-    yield()
+    insert("ul", class: "items") {
+      yield()
+    }
   }
 }
 
+# Helper function to insert a list item with an image behind it.
 @func XMLNode.ur_slicknav_item(Text %href, Text %img_url) {
   insert("li") {
     insert("a", href: %href) {
@@ -28,6 +42,8 @@
   }
 }
 
+# The same as the previous function but with the option of specifying an id.
+# Good for those nasty images that just don't seem centered in the circle!
 @func XMLNode.ur_slicknav_item(Text %href, Text %img_url, Text %id) {
   insert("li", id: %id) {
     insert("a", href: %href) {

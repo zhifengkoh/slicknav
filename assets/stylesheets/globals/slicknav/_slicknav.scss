@@ -4,12 +4,15 @@ Originally from https://github.com/victa/path-menu
 @import "animation";
 
 // ============== Vars =====================
-$items: 5; // number of items
-$arc: 90;  // arc of the circle
-$angle: $arc/$items;  // angle between items
-$space:100; // a value in pixel. It's the space between the red circle and the items
-$circleCenterX: 30;  // the X coord of the red  circle center 
-$circleCenterY: 30;  // the Y coord of the red  circle center 
+/*
+  Tweak these variables to customize your navigation!
+*/
+$items: 5;              // Number of items
+$arc: 90;               // Arc of the circle
+$angle: $arc/$items;    // Angle between items
+$space:100;             // A value in pixels. It's the distance between the red circle and the items
+$circleCenterX: 30;     // The X coord of the red circle center 
+$circleCenterY: 30;     // The Y coord of the red circle center 
 $disappearDelay: 80;    
 
 #menu{display:none;}                                                  
@@ -17,16 +20,22 @@ $disappearDelay: 80;
     @include transform(rotate(0deg));   
 }      
 
-
 // Red button
 .circle-container {
-    position:fixed;bottom:10px;left:10px;height:40px;width:40px;
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    height:40px;
+    width:40px;
     @include box-shadow(0 0 10px rgba(0,0,0,0.7));
     @include border-radius(20px);
     z-index:1;
     .circle {
-        position:fixed;bottom:10px;left:10px;
-        height:40px;width:40px;
+        position:fixed;
+        bottom:10px;
+        left:10px;
+        height:40px;
+        width:40px;
         cursor:pointer;      
         border:0px;
         font-size:30px;
@@ -56,9 +65,11 @@ $disappearDelay: 80;
 // Items               
 .items li {
     position:fixed;
-    bottom:20px;left:20px;
+    bottom:20px;
+    left:20px;
     display:block;
-    height:26px;width:26px;
+    height:26px;
+    width:26px;
     color:white;
     text-align:center;
     line-height:26px;

@@ -72,13 +72,11 @@ View it in [functions/main.ts](https://github.com/zhifengkoh/slicknav_core/blob/
 ### 3. Use
 
     ur_slicknav() {          
-      insert("ul", class: "items") {
-        ur_slicknav_item($profile_path, "profile.png")            # Add a nav item and specify its image
-        ur_slicknav_item($add_user_path, "add_user.png")
-        ur_slicknav_item($all_users_path, "users.png")
-        ur_slicknav_item($add_project_path, "add_project.png")
-        ur_slicknav_item($home_path, "home.png", "mw_nav_home")   # Add a nav item with an id
-      }
+      ur_slicknav_item($profile_path, "profile.png")            # Add a nav item and specify its image
+      ur_slicknav_item($add_user_path, "add_user.png")
+      ur_slicknav_item($all_users_path, "users.png")
+      ur_slicknav_item($add_project_path, "add_project.png")
+      ur_slicknav_item($home_path, "home.png", "mw_nav_home")   # Add a nav item with an id
     }
 
 ### 4. Say "Ooooohhh"
