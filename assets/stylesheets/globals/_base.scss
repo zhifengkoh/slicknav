@@ -11,6 +11,7 @@ $standard-margin: 10px;
 /************ Twitter Bootstrap Overrides ************/
 body {
   padding-top: 35px;
+  padding-bottom: 40px;
 }
 .container {
   width: auto;
@@ -66,6 +67,6 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 /************ Global Styles ************/
-.mw_extend_me {
-  width: 100%;
+.italicized {
+  font-style: italic;
 }
