@@ -6,7 +6,7 @@ This is an example project.
 
 ## Use Me
 
-**1. Download**
+### 1. Download
 
 Fork the [slicknav_core](https://github.com/zhifengkoh/slicknav-core) repo.
 
@@ -14,19 +14,30 @@ Alternatively, you can download it:
 
     $ git clone git@github.com:zhifengkoh/slicknav-core.git
 
-**2. Add**
+### 2. Add
 
-Step 1: Add stylesheets
+#### Step 1: Add stylesheets
 
 ![Stylesheets](https://dl.dropbox.com/u/2686230/stylesheets.png)
 
-Step 2: Remove Bourbon, import Compass, import SlickNav
+#### Step 2: Remove Bourbon, import Compass, import SlickNav
 
     //@import "bourbon/_bourbon";  //Bourbon conflicts with Compass
     @import "compass/css3";
     @import "slicknav/_slicknav";
 
-Step 3: Add functions to `functions/main.ts`
+#### Step 3: Add Compass to `config.json`
+
+    {
+    	"host_map": [
+    		"$.heroku.com => www.heroku.com",
+    		"$.herokuapp.com => www.herokuapp.com",
+    		"$.daasboard.herokuapp.com => daasboard.herokuapp.com"
+    	],
+    	"compass" : true
+    }
+
+#### Step 4: Add functions to `functions/main.ts`
 
     ####################
     ### SlickNav 
@@ -58,7 +69,7 @@ Step 3: Add functions to `functions/main.ts`
       }
     }
 
-**3. Use**
+### 3. Use
 
     ur_slicknav() {          
       insert("ul", class: "items") {
@@ -70,7 +81,7 @@ Step 3: Add functions to `functions/main.ts`
       }
     }
 
-**4. Say "Ooooohhh"**
+### 4. Say "Ooooohhh"
 
 ![Menu In](https://dl.dropbox.com/u/2686230/menu_in.png)
 ![Menu Out](https://dl.dropbox.com/u/2686230/menu_out.png)
