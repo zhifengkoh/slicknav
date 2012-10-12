@@ -8,9 +8,7 @@ This is an example project.
 
 ### 1. Download
 
-Fork the [slicknav_core](https://github.com/zhifengkoh/slicknav-core) repo.
-
-Alternatively, you can download it:
+Fork the [slicknav_core](https://github.com/zhifengkoh/slicknav_core) repo. Alternatively, you can download it:
 
     $ git clone git@github.com:zhifengkoh/slicknav-core.git
 
@@ -38,6 +36,8 @@ Alternatively, you can download it:
     }
 
 **Step 4: Add functions to `functions/main.ts`**
+
+View it in [functions/main.ts](https://github.com/zhifengkoh/slicknav_core/blob/master/functions/main.ts)
 
     ####################
     ### SlickNav 
