@@ -29,6 +29,7 @@ $("body") {
           $profile_path = fetch("a/@href")
           remove()
         }
+        # Keep the Sign Out link
         $("li") {
           move_to("../../..")
         }
@@ -42,9 +43,9 @@ $("body") {
   }
   
   match($path) {
-    not(/users\/sign_in/) {
+    not(/users\/sign_in/) { # Don't show the header on the sign in page
       insert_top("header", class: "mw_header") {
-        ur_slicknav() {                           # 1. Insert the slicknav
+        ur_slicknav() {
           ur_slicknav_item($profile_path, "profile.png")
           ur_slicknav_item($add_user_path, "add_user.png")
           ur_slicknav_item($all_users_path, "users.png")
