@@ -45,12 +45,12 @@ $("body") {
   match($path) {
     not(/users\/sign_in/) { # Don't show the header on the sign in page
       insert_top("header", class: "mw_header") {
-        ur_slicknav() {
-          ur_slicknav_item($profile_path, "profile.png")
-          ur_slicknav_item($add_user_path, "add_user.png")
-          ur_slicknav_item($all_users_path, "users.png")
-          ur_slicknav_item($add_project_path, "add_project.png")
-          ur_slicknav_item($home_path, "home.png")
+        slicknav() {
+          slicknav_item($profile_path, "profile.png")
+          slicknav_item($add_user_path, "add_user.png")
+          slicknav_item($all_users_path, "users.png")
+          slicknav_item($add_project_path, "add_project.png")
+          slicknav_item($home_path, "home.png")
         }
       }
     }

@@ -48,8 +48,8 @@ View it in [functions/main.ts](https://github.com/zhifengkoh/slicknav/blob/maste
     # Inserts the HTML required for a SlickNav
     # Notice the use of the yield():
     # You are expected to insert the navigation menu list and list items
-    @func XMLNode.ur_slicknav() {
-      insert("div", class: "ur_slicknav") {
+    @func XMLNode.slicknav() {
+      insert("div", class: "slicknav") {
         # Insert the input
         insert("input", type: "checkbox", id: "menu", class: "menuControl")
 
@@ -68,7 +68,7 @@ View it in [functions/main.ts](https://github.com/zhifengkoh/slicknav/blob/maste
     }
 
     # Helper function to insert a list item with an image behind it.
-    @func XMLNode.ur_slicknav_item(Text %href, Text %img_url) {
+    @func XMLNode.slicknav_item(Text %href, Text %img_url) {
       insert("li") {
         insert("a", href: %href) {
           insert("img", src: asset("images/" + %img_url))
@@ -93,12 +93,12 @@ Configure your SCSS variables
 
 Then write your Tritium
 
-    ur_slicknav() {          
-      ur_slicknav_item($profile_path, "profile.png")            # Add a nav item and specify its image
-      ur_slicknav_item($add_user_path, "add_user.png")
-      ur_slicknav_item($all_users_path, "users.png")
-      ur_slicknav_item($add_project_path, "add_project.png")
-      ur_slicknav_item($home_path, "home.png", "mw_nav_home")   # Add a nav item with an id
+    slicknav() {          
+      slicknav_item($profile_path, "profile.png")            # Add a nav item and specify its image
+      slicknav_item($add_user_path, "add_user.png")
+      slicknav_item($all_users_path, "users.png")
+      slicknav_item($add_project_path, "add_project.png")
+      slicknav_item($home_path, "home.png", "mw_nav_home")   # Add a nav item with an id
     }
 
 ### 5. Be Slick

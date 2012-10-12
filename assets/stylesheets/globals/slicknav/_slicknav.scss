@@ -1,19 +1,21 @@
 /*
-Originally from https://github.com/victa/path-menu
-*/
+ *Originally from https://github.com/victa/path-menu
+ */
+
 @import "animation";
 
-// ============== Vars =====================
+/************ Variables ************/
 /*
   Tweak these variables to customize your navigation!
 */
-$items: 5;              // Number of items
-$arc: 90;               // Arc of the circle
-$angle: $arc/$items;    // Angle between items
-$space:100;             // A value in pixels. It's the distance between the red circle and the items
-$circleCenterX: 30;     // The X coord of the red circle center 
-$circleCenterY: 30;     // The Y coord of the red circle center 
-$disappearDelay: 80;    
+$items: 5;                    // Number of navigation items
+$arc: 100;                    // Arc of the circle, in degrees
+$angle: $arc/$items;          // Angle between items, in degrees
+$space: 100;                  // The distance between the button and the nav items, in pixels
+$circleCenterX: 30;           // The X coord of the button center, in pixels
+$circleCenterY: 30;           // The Y coord of the button center, in pixels
+$disapperance-delay: 80;      // The delay between hitting the button and the fly-in animation, in milliseconds
+$fly-out-duration: 200;       // The duration of the fly-out animation, in milliseconds
 
 #menu{display:none;}                                                  
 #menu:checked ~ label .circle {
@@ -22,58 +24,61 @@ $disappearDelay: 80;
 
 // Red button
 .circle-container {
-    position:fixed;
-    bottom:10px;
-    left:10px;
-    height:40px;
-    width:40px;
-    @include box-shadow(0 0 10px rgba(0,0,0,0.7));
-    @include border-radius(20px);
-    z-index:1;
+    position: fixed;
+    bottom: $standard-margin;
+    left: $standard-margin;
+    height: $standard-margin*4;
+    width: $standard-margin*4;
+    @include box-shadow(0 0 $standard-margin rgba(0,0,0,0.7));
+    @include border-radius($standard-margin*2);
+    z-index: 1;
     .circle {
-        position:fixed;
-        bottom:10px;
-        left:10px;
-        height:40px;
-        width:40px;
-        cursor:pointer;      
-        border:0px;
-        font-size:30px;
-        line-height:40px;
-        text-align:center;
-        color:white;       
-        padding:0px;
+        position: fixed;
+        bottom: $standard-margin;
+        left: $standard-margin;
+        height: $standard-margin*4;
+        width: $standard-margin*4;
+        cursor: pointer;      
+        border: 0px;
+        font-size: $standard-margin*3;
+        line-height: $standard-margin*4;
+        text-align: center;
+        color: white;       
+        padding: 0px;
         @include transition(all .2s linear);
         @include background-image(linear-gradient(#e85738, #cb2c16));            
-        @include box-shadow(0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.3));       
-        @include border-radius(20px);     
+        @include box-shadow(0 0 0 4px white, 0 0 0 $standard-margin/2 rgba(0,0,0,0.3));       
+        @include border-radius($standard-margin*2);     
         @include transform-style(preserve-3d);     
         @include appearance(none);   
         @include transform(rotate(45deg)); 
-        &:active:before{
-           content:"";    
-           display:block;
-           position:absolute;
-           top:-5px;left:-5px;right:-5px;bottom:-5px;
-           background:rgba(0,0,0,0.3);
-           pointer-events:none;
-           @include border-radius(25px);    
+        &:active:before {
+           content: "";    
+           display: block;
+           position: absolute;
+           top: -$standard-margin/2;
+           right: -$standard-margin/2;
+           bottom: -$standard-margin/2;
+           left: -$standard-margin/2;
+           background: rgba(0,0,0,0.3);
+           pointer-events: none;
+           @include border-radius($standard-margin*5/2);    
         }
     }
 }    
    
-// Items               
+// Navigation Items
 .items li {
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    display:block;
-    height:26px;
-    width:26px;
-    color:white;
-    text-align:center;
-    line-height:26px;
-    font-size:18px;
+    position: fixed;
+    bottom: $standard-margin*2;
+    left: $standard-margin*2;
+    display: block;
+    height: 26px;
+    width: 26px;
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    font-size: 18px;
     @include box-shadow(0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.3), inset 0 0 1px black);
     @include background-image(linear-gradient(#433f3c, #44403d));                
     @include border-radius(13px);     
@@ -87,9 +92,10 @@ $disappearDelay: 80;
     }
 }
 
-// Generate items position + keyframes animation
+/************ CSS3 Animations ************/
+// Generate item positions and keyframe animations
 @for $i from 1 through $items {                         
-    // I'm not really good in math, so I suppose that they have a better way to calcul coordinates :)
+    
     $rad: ( $angle * ($i - 1) + $angle/2 ) * (pi()/180);
     $x:round(($circleCenterX + $space) * cos($rad) );
     $y:round(-($circleCenterY + $space) * sin($rad) );   
@@ -98,26 +104,25 @@ $disappearDelay: 80;
     $xm: round($x * 1.15);
     $ym: round($y * 1.15);                           
     
-    $disappearDelay: $disappearDelay * 1.35;
+    $disapperance-delay: $disapperance-delay * 1.35;
      
     // CSS checkbox + label tricks
     #menu:checked ~ .items li:nth-child(#{$i}) {
-        @include  animation-name(appear-#{$i});
-        @include  animation-duration(240ms);
-        @include  animation-iteration-count(1);
-        @include  animation-fill-mode(forwards); 
+        @include animation-name(appear-#{$i});
+        @include animation-duration($fly-out-duration + ms);
+        @include animation-iteration-count(1);
+        @include animation-fill-mode(forwards); 
         @include  animation-delay((20 * $i)+ms);         
     }       
     
     #menu:not(:checked) ~ .items li:nth-child(#{$i}) {
-        @include  animation-name(disappear-#{$i});
-        @include  animation-duration((320 + $disappearDelay)+ms);
-        @include  animation-iteration-count(1);
-        @include  animation-fill-mode(forwards);          
+        @include animation-name(disappear-#{$i});
+        @include animation-duration((320 + $disapperance-delay)+ms);
+        @include animation-iteration-count(1);
+        @include animation-fill-mode(forwards);          
     }                             
                   
-    // Generating keyframes                    
-    
+    // Animation keyframes                    
     @include keyframes(appear-#{$i}) {
         0% {
            @include transform(translate3d(0, 0, 0px)  rotateZ(270deg));        

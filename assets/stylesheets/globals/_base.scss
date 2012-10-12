@@ -1,12 +1,10 @@
-// Site-wide styles go here
-// What shouldn't go here
-//   - global declartive classes, mixins, or variables, that goes in -lib.scss
+/************ Universal Constants ************/
+// No _lib.scss today, sorry!
+$standard-margin: 10px;
 
 //@import "bourbon/_bourbon";  //Bourbon conflicts with Compass
 @import "compass/css3";
 @import "slicknav/_slicknav";
-
-$standard-margin: 10px;
 
 /************ Twitter Bootstrap Overrides ************/
 body {
