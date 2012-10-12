@@ -5,3 +5,7 @@
 //@import "bourbon/_bourbon";  //Bourbon conflicts with Compass
 @import "compass/css3";
 @import "slicknav/_slicknav";
+
+.container {
+  width: 100%;
+}
