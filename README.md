@@ -71,6 +71,21 @@ View it in [functions/main.ts](https://github.com/zhifengkoh/slicknav_core/blob/
 
 ### 3. Use
 
+Configure your SCSS variables
+
+    /*
+      Tweak these variables to customize your navigation!
+    */
+    $items: 5;              // Number of items
+    $arc: 90;               // Arc of the circle
+    $angle: $arc/$items;    // Angle between items
+    $space:100;             // A value in pixels. It's the distance between the red circle and the items
+    $circleCenterX: 30;     // The X coord of the red circle center 
+    $circleCenterY: 30;     // The Y coord of the red circle center 
+    $disappearDelay: 80;
+
+Then write your Tritium
+
     ur_slicknav() {          
       ur_slicknav_item($profile_path, "profile.png")            # Add a nav item and specify its image
       ur_slicknav_item($add_user_path, "add_user.png")
