@@ -10,7 +10,7 @@ This is an example project.
 
 Fork the [slicknav_core](https://github.com/zhifengkoh/slicknav_core) repo. Alternatively, you can download it:
 
-    $ git clone git@github.com:zhifengkoh/slicknav-core.git
+    $ git clone git@github.com:zhifengkoh/slicknav_core.git
 
 ### 2. Add
 
