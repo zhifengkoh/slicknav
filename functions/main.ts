@@ -1,5 +1,5 @@
 ####################
-### Site Functions
+### SlickNav 
 ####################
 
 @func XMLNode.ur_slicknav() {
