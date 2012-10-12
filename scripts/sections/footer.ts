@@ -1,5 +1,6 @@
 $("body") {
   insert_bottom("footer", class: "mw_footer") {
+    
     # Insert the input
     insert("input", type: "checkbox", id: "menu", class: "menuControl", checked: "checked")
     
