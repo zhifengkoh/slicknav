@@ -2,6 +2,8 @@
 
 _The slickest navigation ever made in 1 night._
 
+Check out a working example on the Nosaka Cloud: [http://mzkoh.daasboard.herokuapp.com.moovapp.com](http://mzkoh.daasboard.herokuapp.com.moovapp.com).
+
 ## Use Me
 
 ### 1. Download
@@ -112,7 +114,7 @@ Then write your Tritium
 
 SlickNav was built without a single line of JavaScript. Unbelievable? See for yourself!
 
-It is, however, a bit heavy on the CSS. Currently, it uses Compass 0.12.7 and Sass 3.2.1 to facilitate mixins, as well as the trigonometric calculations for positioning.
+It is, however, a bit heavy on the CSS. Currently, it uses Compass 0.12.2 and Sass 3.2.1 to facilitate mixins, as well as the trigonometric calculations for positioning.
 
 The navigation utilizes CSS3 animations and `@keyframes`.
 
