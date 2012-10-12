@@ -6,7 +6,7 @@ _The slickest navigation ever made in 1 night._
 
 ### 1. Download
 
-    $ git clone git@github.com:zhifengkoh/slicknav.git
+    $ git clone git://github.com/zhifengkoh/slicknav.git
 
 ### 2. Configure Environment
 
