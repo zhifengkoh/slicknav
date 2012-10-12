@@ -1,13 +1,3 @@
-/*
-  Mappings
-
-  Mappings are matchers that we use to determine if we should execute a
-  bit of Tritium during an execution. Aka, run something when we are
-  are on a certain page.
-
-  Example starting code:
-*/
-
 match($status) {
 
   with(/302/) {
@@ -18,9 +8,13 @@ match($status) {
     log("--> STATUS: 200")
 
     match($path) {
-      with(/^\/$|^\/\?/) {
+      with(/\/$/) {
         log("--> Importing pages/home.ts in mappings.ts")
         @import pages/home.ts
+      }
+      with(/users\/sign_in/) {
+        log("--> Importing pages/users/sign_in.ts in mappings.ts")
+        @import pages/users/sign_in.ts
       }
       else() {
         log("--> No page match in mappings.ts")

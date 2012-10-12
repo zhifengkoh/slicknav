@@ -6,6 +6,42 @@
 @import "compass/css3";
 @import "slicknav/_slicknav";
 
+$standard-margin: 10px;
+
+/************ Twitter Bootstrap Overrides ************/
+body {
+  padding-top: 35px;
+}
 .container {
+  width: auto;
+  padding-left: $standard-margin;
+  padding-right: $standard-margin;
+}
+
+.row {
+  margin-left: 0;
+}
+
+.span2, .span10, .span12 {
+  width: auto;
+}
+
+[class*="span"] {
+  margin-left: 0;
+  float: none;
+}
+
+.btn {
+  display: block;
+  margin-top: $standard-margin/2;
+  margin-bottom: $standard-margin/2;
+}
+
+.well {
+  padding: $standard-margin;
+}
+
+/************ Global Styles ************/
+.mw_extend_me {
   width: 100%;
 }

@@ -2,11 +2,13 @@ $("body") {
   # Remove the desktop nav bar navigation items (keep only the branding)
   $("div[@class='navbar navbar-fixed-top']/div[@class='navbar-inner']/div[@class='container']") {
     
+    # Branding logo
+    $("a[@class='brand']") {
+      $home_path = fetch("@href")
+    }
+    
     # Projects drop down
     $("ul[1]/li[@class='dropdown']/ul[@class='dropdown-menu']") {
-      $("li[1]") {
-        $home_path = fetch("a/@href")
-      }
       $("li[2]") {
         $add_project_path = fetch("a/@href")
       }

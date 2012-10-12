@@ -1,0 +1,58 @@
+.project_summary {
+  width: 100%;
+  .project-header {
+    height: auto;
+    .project-name {
+      width: auto;
+      float: none;
+    }
+    .project-status-display {
+      width: auto;
+      float: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: left;
+      .controls {
+        margin-top: $standard-margin;
+        margin-left: 0;
+        float: none;
+        a {
+          margin-right: $standard-margin;
+        }
+      }
+    }
+  }
+  .project-times {
+    margin-top: $standard-margin/2;
+    height: auto;
+    .due-date {
+      width: auto;
+      float: none;
+    }
+    .last-activity {
+      margin-top: $standard-margin/2;
+      width: auto;
+      float: none;
+      text-align: left;
+    }
+     
+  }
+  .project-assignments {
+    margin-top: $standard-margin/2;
+    height: auto;
+    .developers {
+      width: auto;
+      float: none;
+      .assignment-summary {
+        display: inline;
+      }
+    }
+    .dropbox_url {
+      margin-top: $standard-margin/2;
+      width: auto;
+      float: none;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+}
