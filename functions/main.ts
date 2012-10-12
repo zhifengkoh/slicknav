@@ -2,6 +2,28 @@
 ### Site Functions
 ####################
 
+@func XMLNode.ur_slicknav() {
+  insert("div", class: "ur_slicknav") {
+    # Insert the input
+    insert("input", type: "checkbox", id: "menu", class: "menuControl")
+
+    # Insert the menu button
+    insert("label", for: "menu") {
+      insert("div", class: "circle-container") {
+        insert("button", class: "circle") {
+          text("✖")
+        }
+      }
+    }
+
+    yield()
+  }
+}
+
+####################
+### Site Functions
+####################
+
 # BTN DELEGATE
 # 
 # EXAMPLE CSS
