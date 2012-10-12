@@ -46,11 +46,11 @@ $("body") {
     not(/users\/sign_in/) { # Don't show the header on the sign in page
       insert_top("header", class: "mw_header") {
         slicknav() {
-          slicknav_item($profile_path, "profile.png")
-          slicknav_item($add_user_path, "add_user.png")
-          slicknav_item($all_users_path, "users.png")
-          slicknav_item($add_project_path, "add_project.png")
-          slicknav_item($home_path, "home.png")
+          slicknav_item($profile_path, "profile@2x.png")
+          slicknav_item($add_user_path, "add_user@2x.png")
+          slicknav_item($all_users_path, "users@2x.png")
+          slicknav_item($add_project_path, "add_project@2x.png")
+          slicknav_item($home_path, "home@2x.png")
         }
       }
     }
