@@ -1,0 +1,141 @@
+@import "animation";
+
+// ============== Vars =====================
+$items: 5; // number of items
+$arc: 90;  // arc of the circle
+$angle: $arc/$items;  // angle between items
+$space:170; // a value in pixel. It's the space between the red circle and the items
+$circleCenterX: 30;  // the X coord of the red  circle center 
+$circleCenterY: 30;  // the Y coord of the red  circle center 
+$disappearDelay: 50;    
+
+// Generate items position + keyframes animation
+@for $i from 1 through $items {                         
+  // I'm not really good in math, so I suppose that they have a better way to calcul coordinates :)
+  $rad: ( $angle * ($i - 1) + $angle/2 ) * (pi()/180);
+  $x:round(($circleCenterX + $space) * cos($rad) );
+  $y:round(-($circleCenterY + $space) * sin($rad) );   
+        
+  // Coords for the rebound during the animation
+  $xm: round($x * 1.15);
+  $ym: round($y * 1.15);                           
+
+  $disappearDelay: $disappearDelay * 1.35;
+
+  // CSS checkbox + label tricks
+  #menu:checked ~ .items li:nth-child(#{$i}) {
+    @include animation-name(appear-#{$i});
+    @include animation-duration(240ms);
+    @include animation-iteration-count(1);
+    @include animation-fill-mode(forwards); 
+    @include animation-delay((20 * $i)+ms);         
+  }       
+
+  #menu:not(:checked) ~ .items li:nth-child(#{$i}) {
+    @include  animation-name(disappear-#{$i});
+    @include  animation-duration((320 + $disappearDelay)+ms);
+    @include  animation-iteration-count(1);
+    @include  animation-fill-mode(forwards);          
+  }                             
+
+  // Generating keyframes                    
+  @include keyframes(appear-#{$i}) {
+    0% {
+      @include transform(translate3d(0, 0, 0px)  rotateZ(270deg));        
+      @include  animation-timing-function(cubic-bezier(1,.6,.57,.75));
+    }             
+    80% {
+      @include  animation-timing-function(cubic-bezier(.45,.97,.51,.78));
+      @include transform(translate3d($xm+px, $ym+px,0px) rotateZ(0deg)); 
+    }
+    100% {
+      @include transform(translate3d($x+px, $y+px,0px));      
+    }
+  }
+
+  @include keyframes(disappear-#{$i}) {
+    0% {
+      @include transform(translate3d($x+px, $y+px,0px) rotateZ(0deg));
+      @include  animation-timing-function(cubic-bezier(1,.6,.57,.75));
+    }                                          
+    70% {                                                          
+      @include transform(translate3d($xm+px, $ym+px,0px) rotateZ(360deg));
+      @include  animation-timing-function(cubic-bezier(.45,.97,.51,.78));
+    }
+    100% {
+      @include transform(translate3d(0,0,0px) rotateZ(540deg));        
+    }
+  }     
+}
+
+// Label + checkbox tricks
+#menu {
+  display:none;
+}
+#menu:checked ~ label .circle {
+  @include transform(rotate(0deg));   
+}      
+
+// Red button
+.circle-container {
+  position:fixed;
+  bottom:10px;
+  left:10px;
+  height:40px;
+  width:40px;
+  @include box-shadow(0 0 10px rgba(0,0,0,0.7));
+  @include border-radius(20px);
+  .circle {
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    height:40px;
+    width:40px;
+    cursor:pointer;
+    z-index:2;      
+    border:0px;
+    font-size:30px;
+    line-height:40px;
+    text-align:center;
+    color:white;       
+    padding:0px;
+    @include transition(all .2s linear);
+    @include background-image(linear-gradient(#e85738, #cb2c16));            
+    @include box-shadow(0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.3));       
+    @include border-radius(20px);     
+    @include transform-style(preserve-3d);     
+    @include appearance(none);   
+    @include transform(rotate(45deg)); 
+    &:active:before{
+      content:"";    
+      display:block;
+      position:absolute;
+      top:-5px;
+      left:-5px;
+      right:-5px;
+      bottom:-5px;
+      background:rgba(0,0,0,0.3);
+      pointer-events:none;
+      @include border-radius(25px);    
+    }
+  }
+}    
+   
+// Items               
+.items li {
+  position:fixed;        
+  z-index:-1;
+  bottom:20px;
+  left:20px;
+  display:block;
+  height:26px;
+  width:26px;
+  color:white;
+  text-align:center;
+  line-height:26px;
+  font-size:18px;
+  @include box-shadow(0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.3), inset 0 0 1px black);
+  @include background-image(linear-gradient(#433f3c, #44403d));                
+  @include border-radius(13px);     
+  @include transform-style(preserve-3d);   
+}
