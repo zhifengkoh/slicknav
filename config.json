@@ -3,5 +3,6 @@
 		"$.heroku.com => www.heroku.com",
 		"$.herokuapp.com => www.herokuapp.com",
 		"$.daasboard.herokuapp.com => daasboard.herokuapp.com"
-	]
+	],
+	"compass" : true
 }
