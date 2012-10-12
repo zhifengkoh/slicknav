@@ -1,0 +1,6 @@
+{
+	"host_map": [
+		"$.heroku.com => www.heroku.com",
+		"$.herokuapp.com => www.herokuapp.com"
+	]
+}
