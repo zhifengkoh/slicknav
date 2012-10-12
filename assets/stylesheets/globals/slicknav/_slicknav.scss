@@ -69,10 +69,9 @@ $disappearDelay: 80;
     @include transform-style(preserve-3d);
     a {
       display: block;
-      padding-top: 2px;
       img {
-        max-height: 18px;
-        max-width: 18px;
+        max-height: 22px;
+        max-width: 22px;
       }
     }
 }
