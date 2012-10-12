@@ -4,6 +4,16 @@ _The slickest navigation ever made in 1 night._
 
 This is an example project.
 
+## About
+
+SlickNav was built without a single line of JavaScript. Unbelievable? See for yourself!
+
+It is, however, a bit heavy on the CSS. Currently, it uses Compass 0.12.7 and Sass 3.2.1 to facilitate mixins, as well as the trigonometric calculations for positioning.
+
+The navigation utilizes CSS3 animations and `@keyframes`.
+
+It has been tested on Chrome 21.x and Mobile Safari (iOS 6.0).
+
 ## Use Me
 
 ### 1. Download
@@ -98,6 +108,16 @@ Then write your Tritium
 
 ![Menu In](https://dl.dropbox.com/u/2686230/menu_in.png)
 ![Menu Out](https://dl.dropbox.com/u/2686230/menu_out.png)
+
+## Wishful Thinking
+
+In no particular order:
+
+- Tritium parameter to modify location (bottom left, bottom right, etc.)
+- Multiple on-screen nav menus (e.g. for two thumbs)
+- Mac OS X-like "Stacks" to accommodate icons with text
+- Alternating fly-out/fly-in order (the true Path navigation has its top nav item fly out last, but fly in first)
+- Multiple concentric rings of navigable icons (radial spokes of icons)
 
 ## Basics
 This project works with the MoovSDK.
