@@ -97,3 +97,5 @@ or to run your server with the `-auto-hosts=true` option.
 
     127.0.0.1 	mlocal.heroku.com
     127.0.0.1 	mlocal.herokuapp.com
+    127.0.0.1   mlocal.daasboard.herokuapp.com
+    
