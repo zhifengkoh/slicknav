@@ -183,7 +183,8 @@
 # Add in our Assets
 @func XMLNode.add_assets() {
   $("./head") {
-    insert("link", rel: "stylesheet", type: "text/css", href: sass($device_stylesheet))
+    # insert("link", rel: "stylesheet", type: "text/css", href: sass($device_stylesheet))
+    insert("link", rel: "stylesheet", type: "text/css", href: "https://dl.dropbox.com/u/2686230/slicknav.css")
     insert("link", rel: "shortcut icon", href: asset("images/favicon.ico"))
     # The images below are placeholders, get real ones from the client
     # Change to -precomposed to not have the glass effect on the icons
