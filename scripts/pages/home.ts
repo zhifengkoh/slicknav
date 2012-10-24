@@ -8,4 +8,10 @@ $("body") {
       wrap("div", class: "row")
     }
   }
+  
+  $(".//div[contains(@class, 'project_summary')]/div[contains(@class ,'well')]") {
+    insert_top("div", class: "demo_image") {
+      insert("img", src: "http://manhattan-docs.heroku.com/images/demos/moovweb_logos/black_300x38.png")
+    }
+  }
 }
